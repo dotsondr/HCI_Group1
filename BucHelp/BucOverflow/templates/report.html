@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<title>Report</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+
+</style>
+
+<body>
+  
+  <section style="background-color:  #041E42;"class="hero is-small is-success mb-4">
+    <div class="hero-body">
+        <h1  class="texteffect title" data-value="Report an Issue">Report an Issue</h1>
+    </div> 
+  </section>
+
+  <div class="w3-row-padding" style="margin:50px 100px">
+    <div class="w3-col m15">
+      <div class="w3-card w3-round w3-white">
+        <div class="w3-container w3-padding" style="height: 340px">
+          <h6 style="font-size: 20px"; >Provide feedback or report issues:</h6>
+          <p contenteditable="true" class="w3-border w3-padding" style="height: 200px"></p>
+          <br>
+          <button type="button" class="w3-button w3-theme w3-yellow" style="font-size: 15px";><i class="fa fa-pencil"></i> Submit</button> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+ <br><br><br><br><br>
+
+ <script src="{% static 'script.js' %}"></script>
+
+</body>
+
+
+{% endblock content%}

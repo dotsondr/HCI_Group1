@@ -1,0 +1,126 @@
+{% load static %}
+<html lang="en">
+
+<style>
+
+.site-footer {
+  background: #00003d;
+  height: 100px;
+}
+
+body {background: url(https://www.etsu.edu/_images/background_images/noise.png) repeat 0 0, radial-gradient(circle at 50% 100%, hsla(0,0%,100%,0.1) 50%, hsla(44,100%,59%,0.1) 66%, hsla(209,36%,54%,0.3) 100%) no-repeat fixed, linear-gradient(to bottom, #ffffff 62%,hsla(44,100%,59%,0.1) 138%) no-repeat fixed;}
+  
+</style>
+
+  <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+  <nav style="background-color: #FFc72c;" class="navbar is-warning" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/bucoverflow/home">
+      <img src="{% static 'Logo.png' %}" width="112" height="28">
+    </a>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+
+     
+
+      <a class="navbar-item" href="/bucoverflow/discussions"> <!--#######-->
+        Explore 
+      </a>
+      <a class="navbar-item" href="/bucoverflow/createpost"> <!--#######-->
+        Post a Question
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="/bucoverflow/faq">
+            FAQ
+          </a>
+          <a class="navbar-item" href="/bucoverflow/index">
+            Index
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item" href="/bucoverflow/report">
+            Report an issue
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        {% if not user.is_authenticated %}
+        <div class="buttons">
+          <a href="/bucoverflow/signup" class="button is-info">
+            <strong>Sign up</strong>
+          </a>
+          <a class="button is-light" href="/bucoverflow/signin">
+            Log in
+          </a>
+        </div>
+
+        {% else %}
+          <a><a href="/profile/{{ user.username }}/">Hello, {{user.username}}!</a> </a>
+          <a class="button is-info" href="/bucoverflow/logout"><strong>Log Out</strong></a>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+</nav>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Include the Bulma CSS framework for styling-->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
+<body>
+
+{% block content %}
+{% endblock content%}
+
+<img src="{% static 'mountains.svg' %}">
+<div style><strong>
+  <footer class="site-footer">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-3 is-offset-2">
+                <string style="color:white;">Explore</strong>
+                <ul>
+                    <li><a href="/bucoverflow/discussions">Read and create posts</a></li>
+                </ul>
+            </div>
+            <div class="column is-3">
+                <strong style="color:white;">About</strong>
+                <ul>
+                    <li><a href="/bucoverflow/about">Learn about our application</a></li>
+                </ul>
+            </div>
+            <div class="column is-4">
+                <strong style="color:white;">Our Team</strong>
+                <ul>
+                    <li><a href="/bucoverflow/ourteam">Learn about our team</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="../js/bulma.js"></script>
+</footer>
+</strong></div>
+</body>
+</html>
+
